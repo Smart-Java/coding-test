@@ -14,7 +14,7 @@ class HomeTransactionsListWidget extends StatefulWidget {
 
 class _HomeTransactionsListWidgetState
     extends State<HomeTransactionsListWidget> {
-  bool optionSelected = true;
+  int optionIndex = 1;
   List<HomeTxnModel> txn = const [
     HomeTxnModel(
       title: 'EMA Cross 50  200 + ADX\n(Long)',
@@ -32,6 +32,7 @@ class _HomeTransactionsListWidgetState
       isItActive: true,
     ),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -41,11 +42,29 @@ class _HomeTransactionsListWidgetState
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            txnOptions(title: 'Signal Groups', selected: optionSelected),
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  optionIndex = 0;
+                });
+              },
+              child: txnOptions(
+                title: 'Signal Groups',
+                selected: optionIndex == 0 ? true : false,
+              ),
+            ),
             const AppSpacerWidget(
               width: 20.0,
             ),
-            txnOptions(title: 'Bots', selected: optionSelected),
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  optionIndex = 1;
+                });
+              },
+              child: txnOptions(
+                  title: 'Bots', selected: optionIndex == 1 ? true : false),
+            ),
           ],
         ),
         const AppSpacerWidget(

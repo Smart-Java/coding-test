@@ -51,14 +51,15 @@ class _AuthenticationLoginWidgetState extends State<AuthenticationLoginWidget> {
     return BlocConsumer<AuthenticationPageBloc, AuthenticationPageState>(
       listener: (context, state) {
         if (state.authenticationMessage != null &&
-            (state.isRequestSuccessful == false ||
-                state.isRequestSuccessful == null)) {
+            (state.isRequestSuccessful == false)) {
           snackBarMessage(
             context: context,
             deviceSize: deviceSize,
             message: state.authenticationMessage!,
           );
-          context.replaceRoute(const HomeRoute());
+          Future.delayed(const Duration(seconds: 5)).then((value) {
+            context.replaceRoute(const HomeRoute());
+          });
         }
 
         if (state.isEmailAddressFormatTrue == true ||
@@ -107,7 +108,7 @@ class _AuthenticationLoginWidgetState extends State<AuthenticationLoginWidget> {
           margin: const EdgeInsets.only(
             left: 20.0,
             right: 20.0,
-            top: 50.0,
+            top: 55.0,
           ),
           child: SingleChildScrollView(
             child: Column(
@@ -115,11 +116,11 @@ class _AuthenticationLoginWidgetState extends State<AuthenticationLoginWidget> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
+                    GestureDetector(
+                      onTap: () {},
+                      child: const Icon(
                         Icons.keyboard_arrow_left,
                         color: AppColors.whiteColor,
                         size: 24.0,
@@ -133,7 +134,7 @@ class _AuthenticationLoginWidgetState extends State<AuthenticationLoginWidget> {
                           style: Theme.of(context).textTheme.headlineMedium,
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
                 const AppSpacerWidget(

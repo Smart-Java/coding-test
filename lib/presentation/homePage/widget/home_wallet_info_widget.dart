@@ -64,9 +64,9 @@ class HomeWalletInfoWidget extends StatelessWidget {
                           ),
                         ),
                         Expanded(
-                          child: IconButton(
-                            onPressed: () {},
-                            icon: const Icon(
+                          child: GestureDetector(
+                            onTap: () {},
+                            child: const Icon(
                               Icons.keyboard_arrow_down,
                               color: AppColors.whiteColor,
                             ),
