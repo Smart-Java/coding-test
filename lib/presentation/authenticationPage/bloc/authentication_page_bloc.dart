@@ -41,7 +41,7 @@ class AuthenticationPageBloc
           emit(
             state.copyWith(
               isLoading: false,
-              authenticationMessage: 'Login successfully done',
+              authenticationMessage: requestResponse.right.message ?? 'Login successfully done',
               isRequestSuccessful: true,
               isEmailFieldEmpty: false,
               isPasswordFieldEmpty: false,
