@@ -74,6 +74,9 @@ To modify the API endpoint or handle request failures differently, you can updat
 
 Auto Route is a package used for declarative routing in Flutter applications. It simplifies the navigation and routing setup by generating code based on route configurations. The route configurations are defined in the `routes` folder. Auto Route takes care of handling the redirection to the home route in case of API request failures.
 
+## APK
+Here is the link to the generated APK for this test project: https://drive.google.com/drive/folders/1bis83J00UCGE1x-xU67lBoCHflv8WTI5
+
 ## Conclusion
 
 This Flutter test project demonstrates my proficiency in Flutter app development, showcasing the implementation of Clean Architecture, the BLoC pattern, and the usage of Auto Route for navigation. Although the API request to the designated endpoint refuses to connect, the application handles the failure gracefully by redirecting to the home route. Feel free to explore the code and reach out if you have any questions or feedback.
