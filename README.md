@@ -39,6 +39,7 @@ flutter run
 The project follows the Clean Architecture principles to ensure separation of concerns and maintainability. The folder structure is organized as follows:
 
 - `lib`: Contains the main application code.
+  - `app`: Defines the application
   - `data`: Handles data-related operations, such as API calls and data caching.
   - `domain`: Defines the business logic and entities of the application.
   - `presentation`: Implements the UI layer, including screens, widgets, and BLoC.
