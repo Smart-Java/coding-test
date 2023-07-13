@@ -27,7 +27,7 @@ class _AuthenticationSuccessMessageDialogWidgetState
     return WillPopScope(
       onWillPop: () async => false,
       child: AlertDialog(
-        backgroundColor: AppColors.primaryColor,
+        backgroundColor: AppColors.whiteColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(
             10.0,
@@ -66,7 +66,9 @@ class _AuthenticationSuccessMessageDialogWidgetState
                 padding: const EdgeInsets.only(bottom: 30.0),
                 child: Text(
                   widget.message,
-                  style: Theme.of(context).textTheme.bodyMedium,
+                  style: const TextStyle(
+                    color: AppColors.primaryColor,
+                  ),
                   textAlign: TextAlign.center,
                 ),
               ),

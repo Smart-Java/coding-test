@@ -57,9 +57,6 @@ class _AuthenticationLoginWidgetState extends State<AuthenticationLoginWidget> {
             deviceSize: deviceSize,
             message: state.authenticationMessage!,
           );
-          Future.delayed(const Duration(seconds: 5)).then((value) {
-            context.replaceRoute(const HomeRoute());
-          });
         }
 
         if (state.isEmailAddressFormatTrue == true ||

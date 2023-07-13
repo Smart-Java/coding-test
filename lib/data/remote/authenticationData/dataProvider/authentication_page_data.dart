@@ -36,31 +36,23 @@ class AuthenticationPageData {
     var userLoginAuthResponse = await loginAuthenticationRequest(
       loginRequest: loginRequest,
     );
-    debugPrint('this is the login $userLoginAuthResponse');
+    debugPrint('this is the login response $userLoginAuthResponse');
     LoginResponseModel loginResponseModel;
     FailureResponse failureResponse;
-    if (userLoginAuthResponse is Map) {
-      var statusCode = userLoginAuthResponse['statusCode'];
-      failureResponse = retrieveFailedResponseClass.failedResponse(
-        statusCode: statusCode,
-        response: userLoginAuthResponse,
-      );
-      return Left(failureResponse);
-    } else {
-      int getStatusCode = userLoginAuthResponse.statusCode;
+    int getStatusCode = userLoginAuthResponse.statusCode;
+    debugPrint('this is the login status $getStatusCode');
 
-      switch (getStatusCode) {
-        case 200:
-          loginResponseModel =
-              LoginResponseModel.fromJson(userLoginAuthResponse.data);
-          return Right(loginResponseModel);
-        default:
-          failureResponse = FailureResponse(
-            errorMessage: userLoginAuthResponse['data']['message'],
-            statusCode: getStatusCode,
-          );
-          return Left(failureResponse);
-      }
+    switch (getStatusCode) {
+      case 200:
+        loginResponseModel =
+            LoginResponseModel.fromJson(userLoginAuthResponse.data);
+        return Right(loginResponseModel);
+      default:
+        failureResponse = FailureResponse(
+          errorMessage: userLoginAuthResponse.data['message'],
+          statusCode: getStatusCode,
+        );
+        return Left(failureResponse);
     }
   }
 }

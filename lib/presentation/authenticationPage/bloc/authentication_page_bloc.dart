@@ -42,7 +42,7 @@ class AuthenticationPageBloc
             state.copyWith(
               isLoading: false,
               authenticationMessage: 'Login successfully done',
-              isRequestSuccessful: requestResponse.right.status,
+              isRequestSuccessful: true,
               isEmailFieldEmpty: false,
               isPasswordFieldEmpty: false,
             ),

@@ -6,14 +6,12 @@ part 'login_response_model.g.dart';
 @JsonSerializable()
 class LoginResponseModel extends Equatable {
   const LoginResponseModel(
-      {this.status = false, this.data, this.message,});
+      {this.message,});
 
-  final bool? status;
   final String? message;
-  final Map? data;
 
   @override
-  List<Object?> get props => [status, message, data];
+  List<Object?> get props => [message,];
 
   factory LoginResponseModel.fromJson(Map<String, dynamic> json) {
     return _$LoginResponseModelFromJson(json);
