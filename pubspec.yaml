@@ -1,0 +1,46 @@
+name: login_system
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.0.2 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  equatable: ^2.0.3
+  flutter_bloc: ^8.0.1
+  bloc: ^8.0.3
+  get_it: ^7.2.0
+  injectable: ^1.5.3
+  json_annotation: ^4.6.0
+  auto_route: ^7.6.0
+  cupertino_icons: ^1.0.2
+  google_fonts: ^4.0.0
+  dio: ^5.1.1
+  connectivity_plus: ^2.3.6+1
+  either_dart: ^0.4.0
+  native_shared_preferences: ^2.0.7
+  flutter_secure_storage: ^7.0.1
+  flutter_svg: ^2.0.7
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  injectable_generator:
+  json_serializable: ^6.3.1
+  auto_route_generator: ^7.1.2
+  build_runner: ^2.4.5
+
+
+flutter:
+  uses-material-design: true
+
+
+  assets:
+    - assets/home/svg/
+    - assets/home/png/
+    - assets/login/svg/
+    - assets/login/png/
